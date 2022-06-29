@@ -1,0 +1,24 @@
+<zk xmlns:n="native">
+	<window title="${labels.nomeSistema}" viewModel="@id('vm')@init('br.pucpr.pergamum.ajuda.view.vm.IndexViewModel')">
+		<vbox>
+			<image src="/resources/img/undraw_version_control_re_mg66.svg" width="300px" height="300px" />
+			
+			<label value="Contador:" />
+			<intbox value="@bind(vm.numero)" />
+			<button label="Contar" onClick="@command('onContar')" />
+			
+			<grid model="@load(vm.sistemas)">
+				<columns>
+					<column label="Sistema" />
+				</columns>
+				<template name="model">
+					<row>
+						<label value="${each.descricao}" />
+					</row>
+				</template>
+			</grid>
+			
+			<label value="@load('v.'.concat(vm.versao))" />
+		</vbox>
+	</window>
+</zk>

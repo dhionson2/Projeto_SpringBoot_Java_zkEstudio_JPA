@@ -1,0 +1,10 @@
+<zk xmlns:n="native">
+	<window  >
+			<div>
+		<label value="Olá Primeira tela"/>
+
+	</div>
+	</window>
+
+
+</zk>
