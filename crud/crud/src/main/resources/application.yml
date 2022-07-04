@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: desen #DEFINICAO DO AMBIENTE (desen, prod)
+  datasource:
+    hikari:
+      maximum-pool-size: 200
+      connection-timeout: 40000
+      minimum-idle: 15
+  sql:
+    init:
+      mode: always
+server:
+  port: 80
+  servlet:
+    context-path: /
+    session:
+      tracking-modes: cookie
+      cookie:
+        http-only: true
+perg-ajuda:
+  versao: '@project.version@'
+logging:
+  level:
+    root: error

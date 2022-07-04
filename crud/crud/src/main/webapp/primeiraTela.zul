@@ -1,9 +1,22 @@
-<zk xmlns:n="native">
-	<window  >
-			<div>
-		<label value="Olá Primeira tela"/>
-
-	</div>
+<zk xmlns:n="native"  > 
+	<window viewModel="@id('vm') @init('projeto.crud.crud.view.vm.viewContato')">
+		
+		<div>
+			<label value="Nome:" />
+			<textbox value="@bind(vm.contato)"
+				 maxlength="255" />
+		</div>
+		<div sclass="mt-3">
+			<label value="Email:" />
+			<textbox value= "@bind(vm.contato)"
+			maxlength="255" />
+		</div>
+		<div>
+		 <button sclass="tiffany"
+		                                     iconSclass="fa-fw fas fa-save"
+		                                        label="gravar" onClick="@command('onGravar')"/>
+		</div>
+		
 	</window>
 
 
