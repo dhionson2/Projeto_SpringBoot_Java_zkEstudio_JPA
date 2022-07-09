@@ -4,46 +4,63 @@ import java.util.List;
 
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.Init;
+import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
+import org.zkoss.zkplus.spring.DelegatingVariableResolver;
 
 import projeto.crud.crud.model.Contato;
 import projeto.crud.crud.repository.ContatoRepository;
 import projeto.crud.crud.service.ContatoService;
 
-
+@VariableResolver(DelegatingVariableResolver.class)
 public class viewContato {
 	
 	@WireVariable
 	private ContatoService contatoService;
+	private ContatoRepository contatoRepository;
 	private String nome;
-	private List <Contato> contato;
 	
+	private String textoNome;
+	private String textoEmail;
+	private String textoContato;
 	
-	
-	public void onBuscar() {
-		
-		contatoService.buscarContatos();
-		
-	}
 	@Command
 	public void onGravar() {
-		contatoService.gravarNome(nome);;
-	}
-
-
+		Contato contato = new Contato(textoContato);
+		
+		contatoService.cadastrarContato(contato);
+		
+		
 	
-	public String getNome() {
-		return nome;
+	}
+	
+
+
+
+
+
+	public String getTextoNome() {
+		return textoNome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setTextoNome(String textoNome) {
+		this.textoNome = textoNome;
 	}
-	public List <Contato> getContato() {
-		return contato;
+
+	public String getTextoEmail() {
+		return textoEmail;
 	}
-	public void setContato(List <Contato> contato) {
-		this.contato = contato;
+
+	public void setTextoEmail(String textoEmail) {
+		this.textoEmail = textoEmail;
+	}
+
+	public String getTextoContato() {
+		return textoContato;
+	}
+
+	public void setTextoContato(String textoContato) {
+		this.textoContato = textoContato;
 	}
 
 

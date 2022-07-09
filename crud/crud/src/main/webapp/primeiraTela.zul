@@ -3,18 +3,18 @@
 		
 		<div>
 			<label value="Nome:" />
-			<textbox value="@bind(vm.contato)"
+			<textbox value="@bind(vm.textoContato)"
 				 maxlength="255" />
 		</div>
-		<div sclass="mt-3">
+ 		<div sclass="mt-3">
 			<label value="Email:" />
-			<textbox value= "@bind(vm.contato)"
+			<textbox value= "@bind(vm.textoContato)"
 			maxlength="255" />
 		</div>
 		<div>
 		 <button sclass="tiffany"
-		                                     iconSclass="fa-fw fas fa-save"
-		                                        label="gravar" onClick="@command('onGravar')"/>
+		    iconSclass="fa-fw fas fa-save"
+		    label="gravar" onClick="@command('onGravar')"/>
 		</div>
 		
 	</window>
